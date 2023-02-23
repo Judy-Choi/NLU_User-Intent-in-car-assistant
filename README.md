@@ -11,7 +11,7 @@ A New Multi-Turn, Multi-Domain, Task-Oriented Dialogue Dataset
 
 ## Preprocessing
 1. 각 Intent 별로 Dialogue 의 첫번째 발화만 추출
-- driver 의 첫번째 발화가 가장 intent 가 명확하게 드러나므로)
+- driver 의 첫번째 발화가 가장 intent 가 명확하게 드러나므로
 2. Papago 높임말 번역
 - 번역 결과 파일
    - dev + train + test set
