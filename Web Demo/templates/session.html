@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <title>Flask_Chat_App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+
+    <h3 style='color: #ff6666;font-size: 30px;'>Hello, I`m Car Bot!</h3>
+
+    <form action="" method="POST">
+      <input type="text" class="username" id="usernameID" placeholder="Talk to me"/>
+      <input type="submit"/>
+    </form>
+
+    <div class="message_holder"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script type="text/javascript">
+
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+    // 서버 접속
+    socket.on( 'connect', function() {
+      var form = $( 'form' ).on( 'submit', function( e ) {
+        e.preventDefault()
+        var user_name = $( 'input.username' ).val()
+        socket.emit( 'my event', {user_name : user_name} )
+      } )
+    } )
+
+    // User
+    socket.on( 'my response', function( msg ) {
+      console.log( msg )
+      if( typeof msg.user_name !== 'undefined' ) {
+        $( 'div.message_holder' ).append( '<div><b style="color: #666">'+msg.user_name+'</b> </div>' )
+      }
+    })
+     // Car
+    socket.on( 'my intent', function( msg ) {
+      console.log( msg )
+      $( 'div.message_holder' ).append( '<div><b style="color: #ff6666">'+msg+'</b> </div>' )
+    })
+  </script>
+
+</body>
