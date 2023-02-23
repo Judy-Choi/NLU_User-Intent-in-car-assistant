@@ -63,5 +63,5 @@ A New Multi-Turn, Multi-Domain, Task-Oriented Dialogue Dataset
       - model_navigate.joblib
       - model_weather.joblib
       - model_schedule.joblib
-   - main.py (Flask code)
-   - templates\session.html (웹페이지 html 코드)
+- main.py (Flask code)
+- templates\session.html (웹페이지 html 코드)
