@@ -1,4 +1,6 @@
 # User Intent in Car
+![image](https://user-images.githubusercontent.com/53294075/228554222-27595c1c-8908-4072-abae-a7c42fb379b2.png)
+
 ## Idea
 In-Vehicle Voice User Interface 에서의 사용자 니즈 및 발화 특징 탐색 연구 (서울대 UX랩 논문)   
 - 실험으로 수집한 943개 발화를 41개 Intent에 따라 분류   
